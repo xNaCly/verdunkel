@@ -1,4 +1,4 @@
-package cmd
+package main
 
 import (
 	"flag"
@@ -21,4 +21,5 @@ func main() {
 	flag.BoolVar(&c.Function, "funcs", true, "function name obfuscation")
 	flag.BoolVar(&c.Variables, "vars", true, "variable name obfuscation")
 	flag.BoolVar(&c.Structs, "structs", true, "struct name and field obfuscation")
+	flag.Parse()
 }
