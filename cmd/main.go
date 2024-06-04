@@ -15,7 +15,6 @@ func main() {
 	c := &verdunkel.Config{}
 
 	slog.SetDefault(slog.New(log.New(os.Stdout, slog.LevelDebug)))
-	slog.Debug("startup...")
 
 	flag.BoolVar(&c.Function, "funcs", true, "function name obfuscation")
 	flag.BoolVar(&c.Variables, "vars", true, "variable name obfuscation")
@@ -28,6 +27,7 @@ func main() {
 	flag.StringVar(&c.OutputDir, "out", "./out", "file name obfuscation")
 	exclude := flag.String("exclude", "", "matched agains file path, if matched, skips the file")
 	flag.Parse()
+	slog.Debug("startup...")
 	if *exclude != "" {
 		e, err := regexp.Compile(*exclude)
 		if err != nil {
