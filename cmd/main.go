@@ -24,7 +24,7 @@ func main() {
 	flag.BoolVar(&c.Logs, "logs", false, "stripping of all fmt.Print, fmt.Println, print, println, slog and log calls")
 	flag.BoolVar(&c.Packages, "packages", false, "package name and path obfuscation")
 	flag.BoolVar(&c.FileNames, "files", false, "file name obfuscation")
-	flag.StringVar(&c.OutputDir, "out", "./out", "file name obfuscation")
+	flag.StringVar(&c.OutputDir, "out", "./out", "output directory")
 	exclude := flag.String("exclude", "", "matched agains file path, if matched, skips the file")
 	flag.Parse()
 	slog.Debug("startup...")
